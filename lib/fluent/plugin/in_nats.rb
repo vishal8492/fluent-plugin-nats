@@ -48,9 +48,10 @@ module Fluent
         if @ssl
           @nats_config[:tls] = {
             ca_file: @ca_cert,
-            cert_file: @client_cert,
-            key_file: @client_key
+            cert_chain_file: @client_cert,
+            private_key_file: @client_key
           }
+        end
       end
 
       def start
